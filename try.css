@@ -1,0 +1,684 @@
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: "Prata", sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    background: linear-gradient(45deg, #D9DFC6, #EFF3EA, #FFFDF0);
+    animation: gradientAnimation 5s ease infinite;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 20%;
+    }
+    50% {
+        background-position: 70% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.logo-image {
+    width: 30px; /* Adjust the size to match your text */
+    height: 30px; /* Adjust the size to match your text */
+    margin-right: 10px;
+    border-radius: 50%; /* Optional: Makes the image circular */
+    object-fit: cover; /* Ensures the image fits well */
+}
+
+
+.fancy-text {
+    font-family: 'Prata';
+    font-weight: bold;
+    color: #3D5300;
+}
+
+/*-----------------------------------Mainpage*/
+.background-section {
+  position: relative;
+  height: 600px; /* Match the height of the background */
+  overflow: hidden;
+  width: auto;
+}
+.background {
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(45deg, #FFF2C2, #FFFDF0, #EFF3EA);
+  animation: gradientAnimation 5s ease infinite;
+
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Row styling */
+.row {
+  position: absolute;
+  width: 200%; /* Wider than the screen to allow seamless looping */
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevent images from wrapping */
+  padding: 20px 0; /* Space between rows */
+}
+
+.row1 {
+  top: 8%;
+  animation: slide 50s linear infinite; /* Slower speed */
+}
+
+.row2 {
+  top: 37.33%;
+  animation: slide 40s linear infinite; /* Faster speed */
+}
+
+.row3 {
+  top: 64.66%;
+  animation: slide 60s linear infinite; /* Slower speed */
+}
+
+/* Keyframes for sliding animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move left to right */
+  }
+}
+
+/* Image styling */
+/* Image styling */
+.row img {
+  height: 120px; /* Adjust image height as needed */
+  width: auto;
+  margin-right: 40px; /* Space between images */
+  border: 8px solid white; /* White border around images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  position: relative;; /* Required for the name pop-up */
+}
+
+/* Hover effect */
+.row img:hover {
+  transform: scale(1.5); /* Pop out effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+  z-index: 10; /* Bring the image to the front */
+}
+
+/* Image name pop-up */
+.row img::after {
+  content: attr(data-name); /* Display the image name */
+  position: absolute;
+  bottom: -30px; /* Position below the image */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  color: white; /* White text */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+.row img:hover::after {
+  opacity: 1; /* Show the name on hover */
+}
+
+/* Transparent Box */
+/* Transparent Box */
+.overlay-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%; /* Adjust width as needed */
+  max-width: 600px; /* Maximum width */
+  padding: 30px; /* Increase or decrease padding */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Center-align text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for depth */
+  transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for overlay box */
+.overlay-box:hover {
+  background: rgba(255, 255, 255, 0.7); /* Less transparent on hover */
+}
+
+/* Hover effect for text inside overlay box */
+.overlay-box:hover h1,
+.overlay-box:hover p {
+  color: #3D5300; /* Change text color on hover (e.g., blue) */
+}
+
+.overlay-box h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem; /* Large heading */
+  color: #333; /* Dark text color */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+.overlay-box p {
+  margin: 0;
+  font-size: 1.2rem; /* Paragraph text size */
+  color: #555; /* Slightly lighter text color */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* Fixed Box with Paragraph */
+.fixed-box-section {
+  position: relative;
+  width: 100%;
+  padding: 0px;
+  background: linear-gradient(45deg, #FFF2C2, #FFFDF0, #EFF3EA);
+  text-align: center;
+  z-index: 1; /* Ensure it appears above the background */
+}
+.fixed-box {
+  position: relative;
+  width: 100%;
+  padding: 00px;
+  background: linear-gradient(45deg, #FFF2C2, #FFFDF0, #EFF3EA);
+  text-align: center;
+  z-index: 1;
+  padding-bottom: 30px;
+
+}
+
+.fixed-box p {
+  margin: 0;
+  font-size: 1.2rem; /* Paragraph text size */
+  color: #3D5300; /* Dark text color */
+}
+
+/* About Section */
+/* About Section */
+.about-section {
+
+  background: linear-gradient(45deg, #FFF2C2, #FFFDF0, #EFF3EA);
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  max-width: 1200px;
+  padding-top: 30px;
+  margin:  auto;
+  gap: 120px;
+}
+
+.about-photo {
+  position: relative;
+  width: 500px; /* Adjust as needed */
+  height: 600px; /* Adjust as needed */
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%; /* Rounded corners for the photo */
+  object-fit: cover;
+  border: 12px solid white;
+  box-shadow: 0 10px 8px rgba(237, 197, 97, 0.9);
+}
+
+/* Text Overlay */
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+  border-radius: 40%; /* Match the photo's border radius */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.text-overlay h2 {
+  font-family: 'Prata', serif;
+  font-size: 2rem;
+  color: #3D5300;
+  margin-bottom: 10px;
+}
+
+#typing-text {
+  font-family: 'Prata', serif;
+  font-size: 1rem;
+  color: #3d5300;
+  line-height: 1.6;
+  white-space: pre-wrap; /* Allow text to wrap line by line */
+  overflow: hidden;
+  border-right: 2px solid #3D5300; /* Cursor effect */
+  animation: blink-cursor 0.75s step-end infinite;
+}
+
+/* CSS Writing Box */
+.css-writing-box {
+  position: relative; /* Required for the photo and text overlay */
+  width: 550px; /* Same size as the photo */
+  height: 600px; /* Same size as the photo */
+  background: #f5f5f5; /* Light gray background */
+  border: 12px solid white; /* Match the photo border */
+  border-radius: 40%; /* Match the photo's border radius */
+  box-shadow: 0 10px 10px rgba(239, 197, 97, 0.9); /* Match the photo shadow */
+  overflow: hidden;
+}
+
+/* Photo inside the CSS Writing Box */
+.css-writing-box .css-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10%; /* Match the border radius */
+}
+
+/* Text Overlay for CSS Writing Box */
+.css-writing-box .css-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  border-radius: 20%; /* Match the border radius */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.css-writing-box h2 {
+  font-family: 'Prata', serif;
+  font-size: 1.5rem;
+  color: #3D5300;
+  margin-bottom: 10px;
+}
+
+#css-code {
+  font-family: 'Courier New', monospace; /* Monospace font for code */
+  font-size: 0.9rem;
+  color: #FFF2C2;
+  white-space: pre-wrap; /* Preserve line breaks and spaces */
+  overflow: hidden;
+  border-right: 1px solid #3D5300; /* Smaller cursor */
+  animation: blink-cursor 0.2s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Cursor blink animation */
+@keyframes blink-cursor {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #3D5300;
+  }
+}
+/* Services Section */
+/* Services Section */
+.services-section {
+  padding: 80px 20px;
+  background: linear-gradient(45deg, #FFF2C2, #FFFDF0, #EFF3EA);
+  text-align: center;
+}
+
+.services-section h2 {
+  font-family: 'Prata', serif;
+  font-size: 2.8rem;
+  color: #3D5300;
+  margin-bottom: 60px;
+}
+
+/* Hive Grid Layout */
+.hive-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: -55px;
+}
+
+.hive-row {
+  display: flex;
+  gap: -25px;
+  margin-bottom: -45px;
+}
+
+.hive-row.offset {
+  margin-left: 110px;
+}
+
+/* Hexagon Base Style */
+.hexagon {
+  width: 200px;
+  height: 230px;
+  background: #e9ab17;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-right: -20px;
+}
+
+/* Hexagons with Images */
+.hex-with-image {
+  background: transparent;
+  overflow: hidden;
+}
+
+.hex-with-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: transform 0.3s ease;
+}
+
+/* Hexagons with Text */
+.hex-with-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(233, 171, 23, 0.5);
+}
+
+.hex-with-text h3 {
+  font-family: 'Prata', serif;
+  font-size: 1.5rem;
+  color: #3D5300;
+  margin-bottom: 10px;
+}
+
+/* Pop-up Window (Square Box) */
+.hex-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  max-height: 80%; /* Ensure pop-up doesn't overflow */
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 20;
+  overflow-y: auto; /* Add scrollbar if content overflows */
+}
+
+.hex-popup h3 {
+  font-family: 'Prata', serif;
+  font-size: 1.5rem;
+  color: #3D5300;
+  margin-bottom: 10px;
+}
+
+.hex-popup p {
+  font-family: 'Prata', serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Hide Hexagon and Show Pop-up on Hover */
+.hex-with-text:hover {
+  clip-path: none; /* Remove hexagon shape */
+  background: transparent; /* Make background transparent */
+}
+
+.hex-with-text:hover .hex-popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hover Effects for Images */
+.hex-with-image:hover img {
+  transform: scale(1.1); /* Enlarge image on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hexagon {
+    width: 150px;
+    height: 173px;
+  }
+
+  .hive-row.offset {
+    margin-left: 85px;
+  }
+
+  .hex-popup {
+    width: 250px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hexagon {
+    width: 120px;
+    height: 138px;
+  }
+
+  .hive-row.offset {
+    margin-left: 65px;
+  }
+
+  .hex-popup {
+    width: 200px;
+    padding: 10px;
+  }
+
+  .hex-with-text h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Contact Circle */
+.contact-circle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    background: #E9AB17;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(233, 171, 23, 0.5);
+    animation: pulse 2s infinite;
+    z-index: 1000;
+}
+
+.contact-circle span {
+    color: white;
+    font-family: 'Prata', serif;
+    font-size: 1.2rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(233, 171, 23, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(233, 171, 23, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(233, 171, 23, 0); }
+}
+
+/* Contact Popup */
+.contact-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.contact-form {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #3D5300;
+}
+
+.contact-form h2 {
+    color: #3D5300;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:valid ~ label {
+    top: -10px;
+    left: 5px;
+    font-size: 12px;
+    background: white;
+    padding: 0 5px;
+    color: #E9AB17;
+}
+
+button[type="submit"] {
+    background: #E9AB17;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #D19B15;
+}
+/* Footer Section */
+.footer {
+  background: #FF6F61; /* Bright coral color */
+  color: white;
+  padding: 20px 0; /* Compact padding */
+  text-align: center;
+  font-family: 'Prata', serif;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+  margin-bottom: 10px; /* Space between icons and copyright */
+}
+
+.footer-social a {
+  color: white;
+  font-size: 1.2rem; /* Icon size */
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #FFD700; /* Bright gold color on hover */
+}
+
+.footer-bottom {
+  font-size: 0.9rem; /* Smaller font for copyright */
+}
