@@ -296,7 +296,7 @@ body {
 .css-writing-box {
   position: relative; /* Required for the photo and text overlay */
   width: 550px; /* Same size as the photo */
-  height: 600px; /* Same size as the photo */
+  height: 800px; /* Same size as the photo */
   background: #f5f5f5; /* Light gray background */
   border: 12px solid white; /* Match the photo border */
   border-radius: 40%; /* Match the photo's border radius */
