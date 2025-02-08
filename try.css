@@ -238,13 +238,13 @@ body {
   max-width: 1200px;
   padding-top: 30px;
   margin:  auto;
-  gap: 180px;
+  gap: 250px;
 }
 
 .about-photo {
   position: relative;
-  width: 500px; /* Adjust as needed */
-  height: 600px; /* Adjust as needed */
+  width: 700px; /* Adjust as needed */
+  height: 800px; /* Adjust as needed */
 }
 
 .about-photo img {
